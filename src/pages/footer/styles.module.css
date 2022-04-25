@@ -1,0 +1,6 @@
+.footer {
+    background-color: aquamarine;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

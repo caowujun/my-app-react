@@ -1,0 +1,6 @@
+.head {
+    background-color: brown;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

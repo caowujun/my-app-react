@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import 'antd/dist/antd.css';
 
+import { Button } from 'antd';
+import { Route, Link, BrowserRouter, Routes, Outlet } from 'react-router-dom';
+import Login from './pages/login/Login';
+import Main from './pages/main/Main';
+import About from './pages/about/About';
+import DashBoard from './pages/dashboard/Dashboard';
+import Fire from './pages/fire/Fire';
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <Routes>
+            <Route path="/" element={<Login />} />
+            {/* <Route path="about" element={<About />} /> */}
+            <Route path="/main" element={<Main />}>
+                <Route path="about" element={<About />} />
+                <Route path="fire" element={<Fire />} />
+                <Route path="dashboard" element={<DashBoard />} />
+            </Route>
+        </Routes>
     );
 }
 
